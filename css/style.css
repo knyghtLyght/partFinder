@@ -1,0 +1,18 @@
+/* Level text #454F55
+Menu text #C5C5C5
+Bonnus text #3F768C
+Negetive text #DE9199
+Quet gold #CCA425
+Icon blue #2F8AEB
+Icon green #2A7F37 */
+
+body {
+  background-image: url('../img/bg7.jpg');
+  background-attachment: fixed;
+}
+
+nav {
+  background-color: black;
+  width: 100%;
+  height: 80px;
+}
