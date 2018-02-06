@@ -20,7 +20,7 @@ function ProfileObj (userName, userLevel, userClass, characterAvatar, gameType, 
 }
 
 // hard coded / test cards
-new ProfileObj('Kevin', 10, '../classIcons/rogue.png','../img/characterAvatars/avatarTest1.jpg', ['5e', '4e', 'Pathfinder', 'Star Wars AoR'], 5, testBio);
+new ProfileObj('Kevin', 10, '../partFinder/img/classIcons/rogue.png','http://via.placeholder.com/200x100/404040', ['5e', '4e', 'Pathfinder', 'Star Wars AoR'], 5, testBio);
 
 // Card creator
 function cardCreator (ProfileObj) {
@@ -41,15 +41,17 @@ function cardCreator (ProfileObj) {
   var h2ElUserName = document.createElement('h2'); // Name El
   h2ElUserName.textContent = ProfileObj.userName;
   divElFront.appendChild(h2ElUserName); // appened to front of card
-  divElBack.appendChild(h2ElUserName); // appened to back of card
+  var h2ElUserNameBack = document.createElement('h2'); // Name El
+  h2ElUserNameBack.textContent = ProfileObj.userName;
+  divElBack.appendChild(h2ElUserNameBack); // appened to back of card
   divElFlipper.appendChild(divElFront); // Appened the front div to the flipper div
   var imgElcharacterAvatars = document.createElement('img');
   imgElcharacterAvatars.setAttribute('class', 'characterAvatarImg'); // characterAvatar
   imgElcharacterAvatars.alt = ProfileObj.userName;
   imgElcharacterAvatars.src = ProfileObj.characterAvatar;
-  divElBack.appendChild(imgElcharacterAvatars); // Appened the characterAvatar to the back of the card
+  // divElBack.appendChild(imgElcharacterAvatars); // Appened the characterAvatar to the back of the card
   var pELnarrativeWeight = document.createElement('p'); // narrativeWeight el
-  pELnarrativeWeight.textContent = ProfileObj.narrativeWeight;
+  pELnarrativeWeight.textContent = 'Prefered game style (Narrative vs tactical): ' + ProfileObj.narrativeWeight;
   divElBack.appendChild(pELnarrativeWeight); // Append the narrativeWeight number
   var ulEl = document.createElement('ul');
   for ( var i in ProfileObj.gameType) {
