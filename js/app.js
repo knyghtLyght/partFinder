@@ -29,7 +29,7 @@ new ProfileObj('Victoria', 10, '../partFinder/img/classIcons/bard.png','http://v
 new ProfileObj('Boomer', 10, '../partFinder/img/classIcons/barbarian.png','http://via.placeholder.com/200x100/404040', ['5e', '4e', 'Pathfinder', 'Star Wars AoR'], 5, testBio);
 new ProfileObj('Kat', 10, '../partFinder/img/classIcons/rogue.png','http://via.placeholder.com/200x100/404040', ['5e', '4e', 'Pathfinder', 'Star Wars AoR'], 5, testBio);
 new ProfileObj('Anna', 10, '../partFinder/img/classIcons/bloodhunter.png','http://via.placeholder.com/200x100/404040', ['5e', '4e', 'Pathfinder', 'Star Wars AoR'], 5, testBio);
-new ProfileObj('David', 10, '../partFinder/img/classIcons/Paladin.png','http://via.placeholder.com/200x100/404040', ['5e', '4e', 'Pathfinder', 'Star Wars AoR'], 5, testBio);
+new ProfileObj('David', 10, '../partFinder/img/classIcons/paladin.png','http://via.placeholder.com/200x100/404040', ['5e', '4e', 'Pathfinder', 'Star Wars AoR'], 5, testBio);
 new ProfileObj('JP', 10, '../partFinder/img/classIcons/wizard.png','http://via.placeholder.com/200x100/404040', ['5e', '4e', 'Pathfinder', 'Star Wars AoR'], 5, testBio);
 new ProfileObj('James', 10, '../partFinder/img/classIcons/monk.png','http://via.placeholder.com/200x100/404040', ['5e', '4e', 'Pathfinder', 'Star Wars AoR'], 5, testBio);
 new ProfileObj('Lizzy', 10, '../partFinder/img/classIcons/warlock.png','http://via.placeholder.com/200x100/404040', ['5e', '4e', 'Pathfinder', 'Star Wars AoR'], 5, testBio);
@@ -88,7 +88,72 @@ function profileFormGen () {
   legend.textContent = 'User profile';
   fieldset.appendChild(legend);
   var inputElDisplayName = document.createElement('imput');
-  inputElDisplayName.setAttribute('name', 'displayName', 'id', 'displayName', 'placeholder', 'Display Name');
+  inputElDisplayName.setAttribute('name', 'displayName');
+  inputElDisplayName.setAttribute('id', 'displayName');
+  inputElDisplayName.setAttribute('placeholder', 'Display Name');
+  fieldset.appendChild(inputElDisplayName);
+  var inputElYearsPlayed = document.createElement('input');
+  inputElYearsPlayed.setAttribute('name', 'yearsPlayed');
+  inputElYearsPlayed.setAttribute('id', 'yearsPlayed');
+  inputElYearsPlayed.setAttribute('placeholder', 'Years playing RPGs');
+  fieldset.appendChild(inputElYearsPlayed);
+  var selectElClass = document.createElement('select');
+  selectElClass.setAttribute('name', 'classSelect');
+  selectElClass.setAttribute('id', 'classSelect');
+  var optionElBarbarian = document.createElement('option');
+  optionElBarbarian.setAttribute('value', '../partFinder/img/classIcons/barbarian.png');
+  optionElBarbarian.textContent = 'Barbarian';
+  selectElClass.appendChild(optionElBarbarian);
+  var optionElBard = document.createElement('option');
+  optionElBard.setAttribute('value', '../partFinder/img/classIcons/bard.png');
+  optionElBard.textContent = 'Bard';
+  selectElClass.appendChild(optionElBard);
+  var optionELbloodhunter = document.createElement('option');
+  optionELbloodhunter.setAttribute('value', '../partFinder/img/classIcons/bloodhunter.png');
+  optionELbloodhunter.textContent = 'Bloodhunter';
+  selectElClass.appendChild(optionELbloodhunter);
+  var optionELCleric = document.createElement('option');
+  optionELCleric.setAttribute('value', '../partFinder/img/classIcons/cleric.png');
+  optionELCleric.textContent = 'Cleric';
+  selectElClass.appendChild(optionELCleric);
+  var optionELDruid = document.createElement('option');
+  optionELDruid.setAttribute('value', '../partFinder/img/classIcons/druid.jpg');
+  optionELDruid.textContent = 'Druid';
+  selectElClass.appendChild(optionELDruid);
+  var optionELFighter = document.createElement('option');
+  optionELFighter.setAttribute('value', '../partFinder/img/classIcons/fighter.png');
+  optionELFighter.textContent = 'Fighter';
+  selectElClass.appendChild(optionELFighter);
+  var optionELMonk = document.createElement('option');
+  optionELMonk.setAttribute('value', '../partFinder/img/classIcons/monk.png');
+  optionELMonk.textContent = 'Monk';
+  selectElClass.appendChild(optionELMonk);
+  var optionELPaladin = document.createElement('option');
+  optionELPaladin.setAttribute('value', '../partFinder/img/classIcons/paladin.png');
+  optionELPaladin.textContent = 'Paladin';
+  selectElClass.appendChild(optionELPaladin);
+  var optionELRanger = document.createElement('option');
+  optionELRanger.setAttribute('value', '../partFinder/img/classIcons/ranger.png');
+  optionELRanger.textContent = 'Ranger';
+  selectElClass.appendChild(optionELRanger);
+  var optionELRogue = document.createElement('option');
+  optionELRogue.setAttribute('value', '../partFinder/img/classIcons/rogue.png');
+  optionELRogue.textContent = 'Rogue';
+  selectElClass.appendChild(optionELRogue);
+  var optionELSorcerer = document.createElement('option');
+  optionELSorcerer.setAttribute('value', '../partFinder/img/classIcons/sorcerer.png');
+  optionELSorcerer.textContent = 'Sorcerer';
+  selectElClass.appendChild(optionELSorcerer);
+  var optionELWarlock = document.createElement('option');
+  optionELWarlock.setAttribute('value', '../partFinder/img/classIcons/warlock.png');
+  optionELWarlock.textContent = 'Warlock';
+  selectElClass.appendChild(optionELWarlock);
+  var optionELWizard = document.createElement('option');
+  optionELWizard.setAttribute('value', '../partFinder/img/classIcons/wizard.png');
+  optionELWizard.textContent = 'Wizard';
+  selectElClass.appendChild(optionELWizard);
+  fieldset.appendChild(selectElClass);
+  mainElCenter.appendChild(fieldset);
 }
 
 //Render the cards to screen
@@ -96,6 +161,7 @@ function updateDisplay () {
   for(var i in ProfileObj.allCards) {
     mainElLeft.appendChild(cardCreator(ProfileObj.allCards[i]));
   }
+  profileFormGen();
 }
 
 // Call on page load
