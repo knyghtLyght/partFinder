@@ -1,6 +1,8 @@
 'use strict';
 
-var mainEL = document.getElementById('content');
+var mainElLeft = document.getElementById('mainLeft');
+var mainElCenter = document.getElementById('mainCenter');
+var mainElRight = document.getElementById('mainRight');
 var formElLogin = document.getElementById('navLoginForm');
 
 var testBio = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum non laudantium voluptatem ullam quis recusandae saepe ratione temporibus dolore nobis, consequuntur, doloremque quisquam earum vero dignissimos cupiditate accusamus laboriosam error. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti doloribus dignissimos, voluptatibus ab repudiandae optio eos! Cum illum voluptas modi ea? Illo ullam maxime, nobis laudantium debitis ab nisi quisquam. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi nemo iusto placeat quod eligendi doloremque labore voluptatibus mollitia. Architecto consequuntur minima atque totam excepturi distinctio cumque molestiae? Impedit, culpa voluptate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, sit fuga iure quibusdam dignissimos pariatur iste quis consectetur voluptate repellat. At ratione fugit praesentium velit explicabo distinctio error ipsa in?';
@@ -20,7 +22,18 @@ function ProfileObj (userName, userLevel, userClass, characterAvatar, gameType, 
 }
 
 // hard coded / test cards
-new ProfileObj('Kevin', 10, '../partFinder/img/classIcons/rogue.png','http://via.placeholder.com/200x100/404040', ['5e', '4e', 'Pathfinder', 'Star Wars AoR'], 5, testBio);
+new ProfileObj('Kevin', 10, '../partFinder/img/classIcons/cleric.png','http://via.placeholder.com/200x100/404040', ['5e', '4e', 'Pathfinder', 'Star Wars AoR'], 5, testBio);
+new ProfileObj('Peter', 10, '../partFinder/img/classIcons/sorcerer.png','http://via.placeholder.com/200x100/404040', ['5e', '4e', 'Pathfinder', 'Star Wars AoR'], 5, testBio);
+new ProfileObj('Jon-Eric', 10, '../partFinder/img/classIcons/ranger.png','http://via.placeholder.com/200x100/404040', ['5e', '4e', 'Pathfinder', 'Star Wars AoR'], 5, testBio);
+new ProfileObj('Victoria', 10, '../partFinder/img/classIcons/bard.png','http://via.placeholder.com/200x100/404040', ['5e', '4e', 'Pathfinder', 'Star Wars AoR'], 5, testBio);
+new ProfileObj('Boomer', 10, '../partFinder/img/classIcons/barbarian.png','http://via.placeholder.com/200x100/404040', ['5e', '4e', 'Pathfinder', 'Star Wars AoR'], 5, testBio);
+new ProfileObj('Kat', 10, '../partFinder/img/classIcons/rogue.png','http://via.placeholder.com/200x100/404040', ['5e', '4e', 'Pathfinder', 'Star Wars AoR'], 5, testBio);
+new ProfileObj('Anna', 10, '../partFinder/img/classIcons/bloodhunter.png','http://via.placeholder.com/200x100/404040', ['5e', '4e', 'Pathfinder', 'Star Wars AoR'], 5, testBio);
+new ProfileObj('David', 10, '../partFinder/img/classIcons/Paladin.png','http://via.placeholder.com/200x100/404040', ['5e', '4e', 'Pathfinder', 'Star Wars AoR'], 5, testBio);
+new ProfileObj('JP', 10, '../partFinder/img/classIcons/wizard.png','http://via.placeholder.com/200x100/404040', ['5e', '4e', 'Pathfinder', 'Star Wars AoR'], 5, testBio);
+new ProfileObj('James', 10, '../partFinder/img/classIcons/monk.png','http://via.placeholder.com/200x100/404040', ['5e', '4e', 'Pathfinder', 'Star Wars AoR'], 5, testBio);
+new ProfileObj('Lizzy', 10, '../partFinder/img/classIcons/warlock.png','http://via.placeholder.com/200x100/404040', ['5e', '4e', 'Pathfinder', 'Star Wars AoR'], 5, testBio);
+new ProfileObj('Tewes', 10, '../partFinder/img/classIcons/druid.jpg','http://via.placeholder.com/200x100/404040', ['5e', '4e', 'Pathfinder', 'Star Wars AoR'], 5, testBio);
 
 // Card creator
 function cardCreator (ProfileObj) {
@@ -66,10 +79,22 @@ function cardCreator (ProfileObj) {
   return divElFlipContainer;
 }
 
+// Profile form gen
+function profileFormGen () {
+  var fieldset = document.createElement('fieldset');
+  fieldset.setAttribute('id', 'profileFieldset');
+  var legend = document.createElement('legend');
+  legend.setAttribute('id', 'profileLegend');
+  legend.textContent = 'User profile';
+  fieldset.appendChild(legend);
+  var inputElDisplayName = document.createElement('imput');
+  inputElDisplayName.setAttribute('name', 'displayName', 'id', 'displayName', 'placeholder', 'Display Name');
+}
+
 //Render the cards to screen
 function updateDisplay () {
   for(var i in ProfileObj.allCards) {
-    mainEL.appendChild(cardCreator(ProfileObj.allCards[i]));
+    mainElLeft.appendChild(cardCreator(ProfileObj.allCards[i]));
   }
 }
 
